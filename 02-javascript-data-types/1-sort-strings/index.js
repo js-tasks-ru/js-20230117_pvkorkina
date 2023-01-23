@@ -5,5 +5,17 @@
  * @returns {string[]}
  */
 export function sortStrings(arr, param = 'asc') {
+  let arrCopy = arr.slice();
 
+  return arrCopy.sort((a, b) => {
+    let lowerCaseA = a.toLowerCase();
+    let lowerCaseB = b.toLowerCase();
+
+    if (lowerCaseA !== lowerCaseB) return param === 'asc' ?
+      lowerCaseA.localeCompare(lowerCaseB) :
+      lowerCaseA.localeCompare(lowerCaseB) * -1;
+        
+    if (a > b) return param === 'asc' ? 1 : -1;
+    if (a < b) return param === 'asc' ? -1 : 1; 
+  });
 }
