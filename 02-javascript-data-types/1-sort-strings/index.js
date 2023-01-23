@@ -12,8 +12,8 @@ export function sortStrings(arr, param = 'asc') {
     let lowerCaseB = b.toLowerCase();
 
     if (lowerCaseA !== lowerCaseB) return param === 'asc' ?
-      lowerCaseA.localeCompare(lowerCaseB) :
-      lowerCaseA.localeCompare(lowerCaseB) * -1;
+      lowerCaseA.localeCompare(lowerCaseB, 'ru') :
+      lowerCaseA.localeCompare(lowerCaseB, 'ru') * -1;
         
     if (a > b) return param === 'asc' ? 1 : -1;
     if (a < b) return param === 'asc' ? -1 : 1; 
